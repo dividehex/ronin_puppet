@@ -11,4 +11,10 @@ class packages::xcode (
         os_version_specific => true,
         type                => 'appdmg',
     }
+
+    exec { 'accept_xcode_eula':
+        command     => '/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -license accept',
+        refreshonly => true,
+        subscribe   => Class['Packages::Macos_package_from_s3'],
+    }
 }
