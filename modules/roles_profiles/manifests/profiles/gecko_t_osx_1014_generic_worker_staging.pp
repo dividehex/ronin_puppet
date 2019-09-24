@@ -68,6 +68,11 @@ class roles_profiles::profiles::gecko_t_osx_1014_generic_worker_staging {
             class { 'packages::google_chrome':
                 version => 'v76.0.3809.132',
             }
+
+            class { 'packages::xcode':
+                version => '10.2.1',
+            }
+
             contain packages::nodejs
             contain packages::wget
             contain packages::tooltool
