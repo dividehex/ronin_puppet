@@ -15,6 +15,6 @@ class packages::xcode (
     exec { 'accept_xcode_eula':
         command     => '/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -license accept',
         refreshonly => true,
-        subscribe   => Class['Packages::Macos_package_from_s3'],
+        subscribe   => Packages::Macos_package_from_s3["Xcode_${version}.dmg"],
     }
 }
