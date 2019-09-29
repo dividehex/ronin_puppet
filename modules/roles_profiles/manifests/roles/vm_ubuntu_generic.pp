@@ -4,4 +4,6 @@
 
 class roles_profiles::roles::vm_ubuntu_generic {
 
+    include ::roles_profiles::profiles::docker
+
 }
