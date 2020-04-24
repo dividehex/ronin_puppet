@@ -1,0 +1,3 @@
+modulepath: "./modules:./r10k_modules"
+ssh:
+    host-key-check: false
