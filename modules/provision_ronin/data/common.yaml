@@ -1,0 +1,17 @@
+---
+provision_ronin::xcode_cmdline_tools_source_url: "https://ronin-puppet-package-repo.s3-us-west-2.amazonaws.com/macos/private/10.14/Command_Line_Tools_macOS_10.14_for_Xcode_10.1.dmg"
+
+provision_ronin::puppet_repo_url: "https://github.com/mozilla-platform-ops/ronin_puppet.git"
+provision_ronin::puppet_repo_branch: "master"
+
+provision_ronin::vault_addr_url: "https://vault.relops.mozops.net:8200"
+provision_ronin::puppet_run_interval: "1m"
+provision_ronin::puppet_run_strategy: "never" # periodic, at_boot, never
+
+provision_ronin::vault_source:
+    Linux:
+        url: "https://ronin-puppet-package-repo.s3-us-west-2.amazonaws.com/linux/public/common/vault_1.2.3_linux_amd64"
+        sha256: "f0a776c0547c4fa666884acb4b1c410edccb2a63a647461ecf74f2148b632d20"
+    Darwin:
+        url: "https://ronin-puppet-package-repo.s3-us-west-2.amazonaws.com/macos/public/common/vault_1.2.3_darwin_amd64"
+        sha256: "3b64e44a6bac91c2077361dde8b9debd5733b9f6c63ee68bd08fdb7cfa3ce2a0"

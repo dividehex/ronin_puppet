@@ -24,10 +24,6 @@ class roles_profiles::profiles::gecko_3_t_osx_1014_generic_worker {
                 },
             }
 
-            class { 'roles_profiles::profiles::logging':
-                worker_type => $worker_type,
-            }
-
             class { 'talos':
                 user => 'cltbld',
             }

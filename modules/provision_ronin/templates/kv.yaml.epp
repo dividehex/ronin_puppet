@@ -1,0 +1,3 @@
+---
+puppet_role: <%= @role %>
+datacenter: <%= @dc %>

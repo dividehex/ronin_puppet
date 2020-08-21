@@ -1,0 +1,14 @@
+{
+    "description": "Set startup volume on MacOS",
+    "input_method": "environment",
+    "implementations": [
+        {"name": "switch_startup_disk.sh", "requirements": ["shell"]}
+    ],
+    "supports_noop": false,
+    "parameters": {
+        "volume": {
+            "description": "Name of target volume",
+            "type": "String[1]"
+        }
+    }
+}

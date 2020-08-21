@@ -1,0 +1,18 @@
+{
+    "description": "Set hostname",
+    "input_method": "environment",
+    "implementations": [
+        {"name": "hostname_macos.sh", "requirements": ["shell"]}
+    ],
+    "supports_noop": true,
+    "parameters": {
+        "hostname": {
+            "description": "Hostname",
+            "type": "String[1]"
+        },
+        "domain": {
+            "description": "Domain Name",
+            "type": "String[1]"
+        }
+    }
+}

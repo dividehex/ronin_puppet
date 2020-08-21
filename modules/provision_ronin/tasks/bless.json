@@ -1,0 +1,14 @@
+{
+    "description": "Bless mac mini and reboot",
+    "input_method": "environment",
+    "implementations": [
+        {"name": "bless.sh", "requirements": ["shell"]}
+    ],
+    "supports_noop": true,
+    "parameters": {
+        "dc": {
+            "description": "Datacenter: [mdc1|mdc2]",
+            "type": "Enum['mdc1', 'mdc2']"
+        }
+    }
+}

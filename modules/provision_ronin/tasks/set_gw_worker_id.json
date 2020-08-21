@@ -1,0 +1,10 @@
+{
+    "description": "Set generic worker id in gw config",
+    "input_method": "environment",
+    "parameters": {
+        "hostname": {
+            "description": "Hostname",
+            "type": "String[1]"
+        }
+    }
+}

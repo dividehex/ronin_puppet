@@ -1,0 +1,9 @@
+[Unit]
+Description=Run puppet-apply every <%= @puppet_run_interval %>
+
+[Timer]
+OnActiveSec=1m
+OnUnitActiveSec=<%= @puppet_run_interval %>
+
+[Install]
+WantedBy=timers.target

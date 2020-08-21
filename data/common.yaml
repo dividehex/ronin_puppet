@@ -4,6 +4,8 @@ ntp_server: "ntp.build.mozilla.org"
 
 smtp_relay_host: "smtp1.mail.mdc1.mozilla.com"
 
+log_aggregator: "log-aggregator.srv.releng.%{location}.mozilla.com"
+
 # Apple firmware acceptance hash
 apple_firmware_acceptance:
     Macmini7,1: [ 'MM71.0232.B00' ]

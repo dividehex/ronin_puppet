@@ -1,0 +1,4 @@
+# You may specify parameters to the puppet client here
+
+PUPPET_EXTRA_OPTS=--modulepath=./modules:./r10k_modules --hiera_config=./hiera.yaml --logdest=console --color=false--detailed-exitcodes ./modules/roles_profiles/manifests/roles/<%= @role %>.pp
+PUPPET_REPO_BRANCH=<%= @puppet_repo_branch %>

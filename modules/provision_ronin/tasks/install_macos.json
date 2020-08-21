@@ -1,0 +1,18 @@
+{
+    "description": "Install MacOS",
+    "input_method": "environment",
+    "implementations": [
+        {"name": "install_macos.sh", "requirements": ["shell"]}
+    ],
+    "supports_noop": false,
+    "parameters": {
+        "volume": {
+            "description": "Name of target volume",
+            "type": "String[1]"
+        },
+        "erase": {
+            "description": "Erase target volume",
+            "type": "Boolean"
+        }
+    }
+}

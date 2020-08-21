@@ -5,6 +5,9 @@ defaults:
   datadir: data
 
 hierarchy:
+  - name: "Per-role data"
+    path: "workers/%{facts.puppet_role}.yaml"
+
   - name: "Per-OS defaults"
     path: "os/%{facts.os.family}.yaml"
 

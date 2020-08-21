@@ -12,15 +12,6 @@ class roles_profiles::profiles::mac_v3_signing {
 
             include puppet::disable_atboot
 
-            class { 'roles_profiles::profiles::logging':
-                # The logging module tags the logs with:
-                # hostname: hostname
-                # workerId: short hostname
-                # workerGroup: mdcN (3rd dot-separated string in fqdn)
-                # workerType: $worker_type
-                worker_type => $worker_type,
-            }
-
             include dirs::tools
 
             class { 'scriptworker_prereqs': }

@@ -1,0 +1,103 @@
+---
+groups:
+  - name: mdc1
+    vars:
+      datacenter: mdc1
+    groups:
+      - name: t-mojave-r7
+        config:
+          transport: ssh
+          ssh:
+            user: relops
+            password: relops
+            run-as: root
+            sudo-password: relops
+        groups:
+          - name: gecko-t-osx-1014
+            vars:
+              puppet_role: gecko_t_osx_1014
+            targets:
+              - t-mojave-r7-460.test.releng.mdc1.mozilla.com
+          - name: gecko-t-osx-1014-staging
+            vars:
+              puppet_role: gecko_t_osx_1014_staging
+            targets:
+              - t-mojave-r7-461.test.releng.mdc1.mozilla.com
+              - t-mojave-r7-462.test.releng.mdc1.mozilla.com
+              - t-mojave-r7-463.test.releng.mdc1.mozilla.com
+              - t-mojave-r7-464.test.releng.mdc1.mozilla.com
+              - t-mojave-r7-465.test.releng.mdc1.mozilla.com
+  - name: r8-minis
+    targets:
+      - 192.168.224.123
+    vars:
+      role_id: test-macos-role
+      dc: mdc1
+    config:
+      transport: ssh
+      ssh:
+        user: relops
+        run-as: root
+        sudo-password:
+          _plugin: env_var
+          var: BOLT_PASSWORD
+  - name: gecko_t_osx_1014_r8_qa
+    targets:
+      - t-mojave-r8-031.test.releng.mdc1.mozilla.com
+      - t-mojave-r8-032.test.releng.mdc1.mozilla.com
+      - t-mojave-r8-033.test.releng.mdc1.mozilla.com
+      - t-mojave-r8-034.test.releng.mdc1.mozilla.com
+      - t-mojave-r8-035.test.releng.mdc1.mozilla.com
+      - t-mojave-r8-036.test.releng.mdc1.mozilla.com
+      - t-mojave-r8-037.test.releng.mdc1.mozilla.com
+      - t-mojave-r8-038.test.releng.mdc1.mozilla.com
+      - t-mojave-r8-039.test.releng.mdc1.mozilla.com
+      - t-mojave-r8-040.test.releng.mdc1.mozilla.com
+    facts:
+        puppet_role: gecko_t_osx_1014_r8_qa
+    config:
+      transport: ssh
+      ssh:
+        user: relops
+        password:
+          _plugin: env_var
+          var: BOLT_PASSWORD
+        run-as: root
+        sudo-password:
+          _plugin: env_var
+          var: BOLT_PASSWORD
+
+  - name: gecko_t_osx_1010_staging
+    targets:
+      - t-yosemite-r7-245.test.releng.mdc1.mozilla.com
+      - t-yosemite-r7-246.test.releng.mdc1.mozilla.com
+      - t-yosemite-r7-247.test.releng.mdc1.mozilla.com
+      - t-yosemite-r7-248.test.releng.mdc1.mozilla.com
+      - t-yosemite-r7-249.test.releng.mdc1.mozilla.com
+      - t-yosemite-r7-250.test.releng.mdc1.mozilla.com
+      - t-yosemite-r7-251.test.releng.mdc1.mozilla.com
+    config:
+      transport: ssh
+      ssh:
+        user: root
+        run-as: root
+
+  - name: gecko_t_osx_1014_dev
+    targets:
+      - relops.local
+    config:
+      transport: ssh
+      ssh:
+        user: relops
+        sudo-password:
+          _plugin: env_var
+          var: BOLT_PASSWORD
+
+  - name: rejh_mdc1
+    targets:
+      - rejh1.srv.releng.mdc1.mozilla.com
+      - rejh2.srv.releng.mdc1.mozilla.com
+    config:
+      transport: ssh
+      ssh:
+        run-as: root

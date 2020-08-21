@@ -18,6 +18,13 @@ class roles_profiles::profiles::firewall {
             # https://bugzilla.mozilla.org/show_bug.cgi?id=1562038
             # https://bugzilla.mozilla.org/show_bug.cgi?id=1358301
         }
+        'Darwin': {
+            $fw_role = lookup('firewall_role', undef, undef, undef)
+            notice("fw_role: ${fw_role}")
+            if $fw_role {
+                class { "::fw::roles::${fw_role}": }
+            }
+        }
         default: {
             fail("${::operatingsystem} not supported")
         }

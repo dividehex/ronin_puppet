@@ -26,11 +26,6 @@ class roles_profiles::profiles::gecko_t_osx_1014_generic_worker {
                 meta_data         => $meta_data,
             }
 
-            class { 'roles_profiles::profiles::logging':
-                worker_type   => $worker_type,
-                mac_log_level => 'default',
-            }
-
             class { 'telegraf':
                 global_tags  => $meta_data,
                 agent_params => {
