@@ -20,9 +20,8 @@ class roles_profiles::roles::gecko_t_osx_1015 {
     include ::roles_profiles::profiles::users
     include ::roles_profiles::profiles::cltbld_user
     include ::roles_profiles::profiles::relops_users
-    include ::roles_profiles::profiles::homebrew
 
     include ::roles_profiles::profiles::gecko_t_osx_1015_generic_worker
 
-    #include ::macos_utils::uninstall_homebrew
+    include ::macos_utils::uninstall_homebrew
 }
